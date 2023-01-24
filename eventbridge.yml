@@ -1,14 +1,14 @@
 ---
 
-- name: Get the current caller identity information
-  amazon.aws.aws_caller_info:
-  register: aws_info
-
 - name: Create Lambda function and trigger
   hosts: localhost
   gather_facts: false
 
   tasks:
+    - name: Get the current caller identity information
+      amazon.aws.aws_caller_info:
+      register: aws_info
+  
     - name: Create additional Eventbridge trigger
       ansible.builtin.include_role:
         name: create_lambda
