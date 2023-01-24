@@ -5,7 +5,6 @@
     region: "{{ region }}"
     schedule_expression: "{{ eventbridge_schedule }}"
     description: Run billing report Lambda on schedule
-    tags: "{{ tags }}"
     targets:
       - id: "target_{{ eventbridge_rule_name }}"
         arn: "arn:aws:lambda:{{ region }}:{{ aws_info.account }}:function:{{ lambda_function_name }}"
