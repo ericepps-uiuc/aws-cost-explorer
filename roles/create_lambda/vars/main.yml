@@ -7,7 +7,7 @@ region: us-east-2
 lambda_function_name: "{{ function_name }}"
 
 iam_role_name: "lambda_{{ lambda_function_name }}"
-eventbridge_rule_name: "lambda_{{ lambda_function_name }}"
+eventbridge_rule_name: "lambda_{{ lambda_function_name }}_{{ tag_key }}"
 
 s3_source:
   bucket: billing-lambda-src
